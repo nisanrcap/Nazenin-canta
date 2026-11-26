@@ -1,0 +1,172 @@
+/* ==========================================================
+   NAZENIN - RENK VE FONT AYARLARI  (styles/nazenin.css)
+   Bu dosya main_styles.css ve responsive.css'ten SONRA yuklenir.
+   Ayni ozelligi ikinci kez yazdigimiz icin Wish'in eski renkleri
+   ve fontlari bu dosyadakilerle degisir. Wish dosyalarina dokunma.
+   Rengi/fontu degistirmek istersen sadece 1. bolumu duzenle.
+   ========================================================== */
+
+/* ---------- 1. TEK YERDE TANIM (degiskenler) ---------- */
+:root{
+  /* Colorhunt paleti: f1e5d1 - dbb5b5 - c39898 - 987070 */
+  --renk-zemin:   #F1E5D1;   /* palet 1: sayfa zemini */
+  --renk-acik:    #DBB5B5;   /* palet 2: acik vurgu, kart/alan zemini */
+  --renk-vurgu:   #C39898;   /* palet 3: ikon, cizgi, susleme */
+  --renk-ana:     #987070;   /* palet 4: ana marka rengi */
+  --renk-ana-koyu:#7A5555;   /* palet 4'un koyusu: dugme ve link (beyaz yaziyla kontrast 6:1) */
+  --renk-yazi:    #3B2727;   /* ana metin (zeminde kontrast 11:1) */
+  --renk-yazi-soluk:#6B5252; /* ikincil metin (kontrast 5.7:1) */
+  --renk-beyaz:   #FFFFFF;
+
+  --font-baslik: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-metin:  'Poppins', 'Segoe UI', Arial, sans-serif;
+}
+
+/* ---------- 2. FONTLAR ---------- */
+body, p, h1, h2, h3, h4, h5, h6{
+  font-family: var(--font-metin);
+}
+h1, h2, h3, h4, h5, h6,
+.section_title, .logo a, .home_slider_title, .home_slider_subtitle,
+.home_slider_dots ul li, .promo_link a, .promo_title, .extra_1_title,
+.extra_1_price, .extra_2_top, .extra_2_bottom, .extra_2_center,
+.gallery_title ul li a, .test_text, .test_name, .footer_logo a, .copyright{
+  font-family: var(--font-baslik);
+}
+
+/* ---------- 3. GENEL RENKLER ---------- */
+body{ background: var(--renk-zemin); color: var(--renk-yazi); }
+p{ color: var(--renk-yazi-soluk); }
+.header, .menu{ background: var(--renk-zemin); }
+.logo a, .main_nav ul li a, .menu_nav ul li a{ color: var(--renk-yazi); }
+
+/* Wish'te #937C6F olan yazi renkleri */
+.section_subtitle,
+.main_nav ul li a:hover, .menu_nav ul li a:hover,
+.promo_link:hover a, .product_name a:hover,
+.extra_1_title, .extra_2_center, .test_title,
+.gallery_title ul li a:hover,
+.footer_nav ul li a:hover, .footer_social ul li a i{
+  color: var(--renk-ana-koyu);
+}
+
+/* Wish'te #937C6F olan arka planlar (dugmeler, rozetler) */
+.button, .newsletter_button, .product_buy,
+.cart_num_container, .star_num_container,
+.home_slider_content_inner, .home_slider_next{
+  background: var(--renk-ana-koyu);
+}
+.burger_container:hover div, .menu_close:hover div{ background: var(--renk-ana-koyu); }
+.extra_1_content, .extra_promo_2{ border-color: var(--renk-ana-koyu); }
+
+/* Klavye ile gezinirken odak halkasi (erisilebilirlik) */
+a:focus-visible, button:focus-visible, input:focus-visible{
+  outline: 3px solid var(--renk-ana-koyu);
+  outline-offset: 3px;
+}
+
+/* ---------- 4. ALT MENULU HEADER (8 menu ogesi icin) ---------- */
+.main_nav{ padding-left: 40px; }
+.main_nav ul li{ margin-right: 22px; }
+.main_nav ul li a{ letter-spacing: .06em; }
+
+.main_nav ul li.has-sub{ position: relative; }
+.main_nav ul li.has-sub > a::after{ content: " \25BE"; font-size: 10px; }
+.main_nav .submenu{
+  position: absolute; top: 100%; left: -14px; min-width: 220px;
+  padding: 8px; margin-top: 12px;
+  background: var(--renk-beyaz);
+  border: 1px solid var(--renk-acik); border-radius: 10px;
+  box-shadow: 0 10px 28px rgba(59,39,39,.15);
+  opacity: 0; visibility: hidden; transform: translateY(8px);
+  transition: all .2s ease;
+  z-index: 200;
+}
+.main_nav .submenu li{ display: block; margin: 0; }
+.main_nav .submenu li a{
+  display: block; padding: 10px 14px; border-radius: 6px;
+  text-transform: none; letter-spacing: 0; font-weight: 500; font-size: 13px;
+}
+.main_nav .submenu li a:hover{ background: var(--renk-zemin); }
+.main_nav ul li.has-sub:hover > .submenu,
+.main_nav ul li.has-sub:focus-within > .submenu{
+  opacity: 1; visibility: visible; transform: none;
+}
+/* hover ile menu arasindaki bosluktan kapanmasin */
+.main_nav .submenu::before{ content:""; position:absolute; top:-14px; left:0; right:0; height:14px; }
+
+/* Mobil (burger) menudeki alt liste: ana basliklardan daha kucuk ve sade */
+.menu_nav ul ul{ margin-top: 8px; }
+.menu_nav ul ul li{ margin-bottom: 6px; }
+.menu_nav ul ul li a{
+  font-size: 13px; font-weight: 400; text-transform: none; letter-spacing: .02em;
+  color: var(--renk-yazi-soluk);
+}
+
+/* 8 menu ogesi 1400px'ten dar ekrana sigmaz: o zaman yatay menu yerine burger menu kullan */
+@media (min-width:1400px){ .burger_container{ display: none !important; } }
+@media (max-width:1399px){
+  .main_nav{ display: none; }
+  .shopping{ padding-right: 91px; }
+}
+
+/* Hareket azaltmayi secen kullanicilar icin animasyonlari kapat */
+@media (prefers-reduced-motion: reduce){
+  *, *::before, *::after{ transition: none !important; animation: none !important; }
+}
+
+/* ---------- 5. FOOTER (koyu zemin, 3 sutun + alt serit) ---------- */
+.footer{ background: var(--renk-yazi); color: var(--renk-zemin); padding: 70px 0 0; }
+.footer p, .footer li, .footer span{ color: var(--renk-zemin); }
+.footer a{ color: var(--renk-zemin); }
+.footer a:hover{ color: var(--renk-acik); }
+.footer a:focus-visible{ outline-color: var(--renk-acik); }
+.footer_col{ margin-bottom: 36px; }
+
+.footer .footer_logo a{ font-size: 44px; color: #FFFFFF; }
+.footer_about{ margin: 14px 0 22px; max-width: 420px; line-height: 1.9; font-size: 14px; }
+.footer_title{
+  font-family: var(--font-baslik); font-size: 20px; font-weight: 600;
+  color: #FFFFFF; margin-bottom: 18px;
+}
+
+/* Wish'in yatay (inline) listesini dikey yap */
+.footer .footer_nav{ margin-top: 0; }
+.footer .footer_nav ul li{ display: block; margin: 0 0 10px; }
+.footer .footer_nav ul li a{
+  font-size: 14px; font-weight: 400; text-transform: none; letter-spacing: 0;
+  color: var(--renk-zemin);
+}
+.footer .footer_nav ul li a:hover{ color: var(--renk-acik); text-decoration: underline; }
+
+.footer_contact li{ display: flex; gap: 12px; margin-bottom: 12px; font-size: 14px; line-height: 1.7; }
+.footer_contact li i{ color: var(--renk-acik); width: 16px; text-align: center; margin-top: 5px; }
+
+.footer .footer_social{ margin-top: 0; }
+.footer .footer_social ul li{ margin-right: 10px; }
+.footer .footer_social ul li a{
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 42px; height: 42px; border-radius: 50%;
+  border: 1px solid rgba(241,229,209,.45);
+  transition: all 200ms ease;
+}
+.footer .footer_social ul li a i{ font-size: 18px; color: var(--renk-zemin); }
+.footer .footer_social ul li a:hover{ background: var(--renk-ana-koyu); border-color: var(--renk-ana-koyu); }
+.footer .footer_social ul li a:hover i{ color: #FFFFFF; }
+
+.footer_bottom{
+  border-top: 1px solid rgba(241,229,209,.2);
+  padding: 24px 0 18px; text-align: center;
+}
+.footer_designer{ font-size: 13px; margin-bottom: 6px; line-height: 1.8; }
+.footer_designer strong{ color: #FFFFFF; }
+.footer .copyright{
+  margin-top: 0; padding-bottom: 0; font-family: var(--font-metin);
+  font-size: 12px; line-height: 1.8; color: var(--renk-zemin);
+}
+.footer .copyright a{ text-decoration: underline; }
+
+/* Hareket azaltmayi secen kullanicilar icin animasyonlari kapat */
+@media (prefers-reduced-motion: reduce){
+  *, *::before, *::after{ transition: none !important; animation: none !important; }
+}

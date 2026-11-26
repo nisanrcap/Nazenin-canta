@@ -4,8 +4,14 @@
 <title>Nazenin Çanta</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content="Wish shop project">
+<meta name="description" content="Nazenin Çanta: el işçiliğiyle üretilen omuz, el ve sırt çantaları.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Google Fonts: başlık = Playfair Display, metin = Poppins (Türkçe karakter destekli) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
 <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
@@ -14,58 +20,47 @@
 <link href="plugins/colorbox/colorbox.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
 <link rel="stylesheet" type="text/css" href="styles/responsive.css">
+<!-- EN SONDA: Wish'in renk ve fontlarını ezen kendi dosyamız -->
+<link rel="stylesheet" type="text/css" href="styles/nazenin.css">
 </head>
+
 <body>
 
 <div class="super_container">
-	<li><a href="contact.html">Misyon-Vizyon</a></li>
 	<!-- Header -->
 
 	<header class="header">
 		<div class="header_inner d-flex flex-row align-items-center justify-content-start">
-			<div class="logo"><a href="#">Nazenin</a></div>
-			<nav class="main_nav">
+			<div class="logo"><a href="index.html">Nazenin</a></div>
+			<nav class="main_nav" aria-label="Ana menü">
 				<ul>
-					<li><a href="#">Ana Sayfa</a></li>
-					<li><a href="categories.html">Ürünlerimiz</a></li>
-					<li><a href="categories.html">Duyurular</a></li>
-					<li><a href="categories.html">Hakkımızda</a></li>
-					<li><a href="contact.html">Misyon-Vizyon</a></li>
-					<li><a href="contact.html">Rakamlarla Nazenin</a></li>
+					<li><a href="index.html">Ana Sayfa</a></li>
+					<li class="has-sub">
+						<a href="urunler.html">Ürünlerimiz</a>
+						<ul class="submenu">
+							<li><a href="urunler.html?kategori=omuz">Omuz Çantaları</a></li>
+							<li><a href="urunler.html?kategori=el">El Çantaları</a></li>
+							<li><a href="urunler.html?kategori=sirt">Sırt Çantaları</a></li>
+							<li><a href="urunler.html?kategori=clutch">Clutch &amp; Cüzdan</a></li>
+						</ul>
+					</li>
+					<li><a href="duyurular.html">Duyurular</a></li>
+					<li><a href="hakkimizda.html">Hakkımızda</a></li>
+					<li><a href="misyon-vizyon.html">Misyon-Vizyon</a></li>
+					<li><a href="rakamlarla-nazenin.html">Rakamlarla Nazenin</a></li>
+					<li><a href="iletisim.html">İletişim</a></li>
 				</ul>
 			</nav>
 			<div class="header_content ml-auto">
-				<div class="search header_search">
-					<form action="#">
-						<input type="search" class="search_input" required="required">
-						<button type="submit" id="search_button" class="search_button"><img src="images/magnifying-glass.svg" alt=""></button>
-					</form>
-				</div>
 				<div class="shopping">
-					<!-- Cart -->
-					<a href="#">
+					<!-- Sepetim -->
+					<a href="sepet.html" aria-label="Sepetim">
 						<div class="cart">
 							<img src="images/shopping-bag.svg" alt="">
-							<div class="cart_num_container">
-								<div class="cart_num_inner">
-									<div class="cart_num">1</div>
-								</div>
-							</div>
 						</div>
 					</a>
-					<!-- Star -->
-					<a href="#">
-						<div class="star">
-							<img src="images/star.svg" alt="">
-							<div class="star_num_container">
-								<div class="star_num_inner">
-									<div class="star_num">0</div>
-								</div>
-							</div>
-						</div>
-					</a>
-					<!-- Avatar -->
-					<a href="#">
+					<!-- Admin paneli -->
+					<a href="admin/giris.html" aria-label="Yönetici girişi">
 						<div class="avatar">
 							<img src="images/avatar.svg" alt="">
 						</div>
@@ -73,9 +68,35 @@
 				</div>
 			</div>
 
-			<div class="burger_container d-flex flex-column align-items-center justify-content-around menu_mm"><div></div><div></div><div></div></div>
+			<!-- Mobil menü düğmesi: SİLME, 991px altında menü sadece bununla açılır -->
+			<div class="burger_container d-flex flex-column align-items-center justify-content-around menu_mm" role="button" aria-label="Menüyü aç"><div></div><div></div><div></div></div>
 		</div>
 	</header>
+
+	<!-- Mobil menü paneli: SİLME, aynı menü bağlantıları burada da olmalı -->
+
+	<div class="menu d-flex flex-column align-items-end justify-content-start text-right menu_mm trans_400">
+		<div class="menu_close_container"><div class="menu_close"><div></div><div></div></div></div>
+		<div class="logo menu_mm"><a href="index.html">Nazenin</a></div>
+		<nav class="menu_nav" aria-label="Mobil menü">
+			<ul class="menu_mm">
+				<li class="menu_mm"><a href="index.html">Ana Sayfa</a></li>
+				<li class="menu_mm"><a href="urunler.html">Ürünlerimiz</a>
+					<ul class="menu_mm">
+						<li class="menu_mm"><a href="urunler.html?kategori=omuz">Omuz Çantaları</a></li>
+						<li class="menu_mm"><a href="urunler.html?kategori=el">El Çantaları</a></li>
+						<li class="menu_mm"><a href="urunler.html?kategori=sirt">Sırt Çantaları</a></li>
+						<li class="menu_mm"><a href="urunler.html?kategori=clutch">Clutch &amp; Cüzdan</a></li>
+					</ul>
+				</li>
+				<li class="menu_mm"><a href="duyurular.html">Duyurular</a></li>
+				<li class="menu_mm"><a href="hakkimizda.html">Hakkımızda</a></li>
+				<li class="menu_mm"><a href="misyon-vizyon.html">Misyon-Vizyon</a></li>
+				<li class="menu_mm"><a href="rakamlarla-nazenin.html">Rakamlarla Nazenin</a></li>
+				<li class="menu_mm"><a href="iletisim.html">İletişim</a></li>
+			</ul>
+		</nav>
+	</div>
 
 	<!-- Home -->
 
@@ -486,30 +507,55 @@
 	<footer class="footer">
 		<div class="container">
 			<div class="row">
-				<div class="col text-center">
-					<div class="footer_logo"><a href="#">Wish</a></div>
-					<nav class="footer_nav">
-						<ul>
-							<li><a href="index.html">home</a></li>
-							<li><a href="categories.html">clothes</a></li>
-							<li><a href="categories.html">accessories</a></li>
-							<li><a href="categories.html">lingerie</a></li>
-							<li><a href="contact.html">contact</a></li>
-						</ul>
-					</nav>
+
+				<!-- 1. Sütun: logo, kısa tanıtım, sosyal medya -->
+				<div class="col-lg-5 footer_col">
+					<div class="footer_logo"><a href="index.html">Nazenin</a></div>
+					<p class="footer_about">Nazenin, atölyesinde omuz, el ve sırt çantaları ile clutch modelleri tasarlayıp el emeğiyle üretir. Günlük hayatın içinde uzun yıllar yanınızda kalacak çantalar sunuyoruz.</p>
 					<div class="footer_social">
 						<ul>
-							<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-reddit-alien" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+							<li><a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+							<li><a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+							<li><a href="https://x.com/" target="_blank" rel="noopener" aria-label="X (Twitter)"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+							<li><a href="https://www.pinterest.com/" target="_blank" rel="noopener" aria-label="Pinterest"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
 						</ul>
 					</div>
-					<div class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
 				</div>
+
+				<!-- 2. Sütun: sayfa bağlantıları  -->
+				<div class="col-sm-6 col-lg-3 footer_col">
+					<h3 class="footer_title">Sayfalar</h3>
+					<nav class="footer_nav" aria-label="Alt menü">
+						<ul>
+							<li><a href="index.html">Ana Sayfa</a></li>
+							<li><a href="urunler.html">Ürünlerimiz</a></li>
+							<li><a href="duyurular.html">Duyurular</a></li>
+							<li><a href="hakkimizda.html">Hakkımızda</a></li>
+							<li><a href="misyon-vizyon.html">Misyon-Vizyon</a></li>
+							<li><a href="rakamlarla-nazenin.html">Rakamlarla Nazenin</a></li>
+							<li><a href="iletisim.html">İletişim</a></li>
+						</ul>
+					</nav>
+				</div>
+
+				<!-- 3. Sütun: adres, telefon, e-posta, çalışma saatleri -->
+				<div class="col-sm-6 col-lg-4 footer_col">
+					<h3 class="footer_title">İletişim</h3>
+					<ul class="footer_contact">
+						<li><i class="fa fa-map-marker" aria-hidden="true"></i><span>Gebze/ Kocaeli</span></li>
+						<li><i class="fa fa-phone" aria-hidden="true"></i><a href="tel:+902620000000">+90 000 000 00 00</a></li>
+						<li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:info@nazenincanta.com">info@nazenincanta.com</a></li>
+						<li><i class="fa fa-clock-o" aria-hidden="true"></i><span>Hafta içi 09.00–18.00</span></li>
+					</ul>
+				</div>
+			</div>
+
+			<!-- Alt şerit: tasarımcı bilgisi + telif -->
+			<div class="footer_bottom">
+				<p class="footer_designer">Web sitesi tasarımı: <strong>Nisanur ÇAP – 241307061</strong> · Kocaeli Üniversitesi, Bilişim Sistemleri Mühendisliği Web Tasarımı</p>
+				<div class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+&copy;<script>document.write(new Date().getFullYear());</script> Nazenin Çanta. Tüm hakları saklıdır. | Şablon: Wish, <a href="https://colorlib.com" target="_blank" rel="noopener">Colorlib</a> (CC BY 3.0). Bu site bir ders projesidir, ürünler ve marka kurgusaldır.
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
 			</div>
 		</div>
 	</footer>
