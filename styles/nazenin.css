@@ -170,3 +170,31 @@ a:focus-visible, button:focus-visible, input:focus-visible{
 @media (prefers-reduced-motion: reduce){
   *, *::before, *::after{ transition: none !important; animation: none !important; }
 }
+.main_nav > ul > li > a.active,
+.menu_nav > ul > li > a.active{ color: var(--renk-ana-koyu); }
+
+/* ---------- 6. BEYAZ BOLUM ARKA PLANLARINI ZEMINE UYDUR ---------- */
+.super_container,
+.product,
+.reviews,
+.review_form_container,
+.newsletter {
+  background: var(--renk-zemin) !important;
+}
+
+/* Yorum formu ile bulten (newsletter) arasindaki asiri boslugu daralt */
+.reviews,
+.review_form_container {
+  padding-bottom: 30px !important;
+  margin-bottom: 0 !important;
+}
+
+.newsletter {
+  padding-top: 30px !important;
+  margin-top: 0 !important;
+}
+
+/* ---------- 7. URUN FIYAT RENGI ---------- */
+.product_price {
+  color: var(--renk-yazi) !important;
+}

@@ -1,0 +1,29 @@
+/* ---------- 6. URUN SAYFASI (product.css'in renk/fontlarini ez) ---------- */
+.home_title, .breadcrumbs ul li, .breadcrumbs ul li a,
+.current_page ul li, .current_page ul li a,
+.reviews_title, .review_form_title{
+  font-family: var(--font-baslik);
+}
+.product_name{ font-family: var(--font-baslik); color: var(--renk-yazi); line-height: 1.2; }
+.product_price{ color: var(--renk-ana-koyu); }          /* #8a8a8a'nin kontrasti dusuktu */
+.review_date, .breadcrumbs ul li a:hover, .current_page ul li a:hover,
+.review_name a:hover{ color: var(--renk-ana-koyu); }
+.regular_radio:checked + label, .review_form_button{ background: var(--renk-ana-koyu); }
+.regular_radio + label{ width: auto; min-width: 64px; padding: 0 14px; }   /* "Kahve", "Pudra" gibi uzun yazilar sigsin */
+.review_date{ font-size: 13px; }
+
+/* Urun ozellikleri listesi (Wish'te yok, biz ekledik) */
+.product_features_title{
+  font-family: var(--font-baslik); font-size: 20px; margin: 28px 0 12px; color: var(--renk-yazi);
+}
+.product_features li{
+  position: relative; padding: 8px 0 8px 26px;
+  border-bottom: 1px dashed var(--renk-acik); color: var(--renk-yazi); font-size: 14px;
+}
+.product_features li::before{
+  content: "\f00c"; font-family: FontAwesome; position: absolute; left: 0; color: var(--renk-ana-koyu);
+}
+
+/* Menude bulunulan sayfa (layout.js 'active' sinifi ekler) */
+.main_nav > ul > li > a.active,
+.menu_nav > ul > li > a.active{ color: var(--renk-ana-koyu); }
