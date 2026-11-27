@@ -198,3 +198,40 @@ a:focus-visible, button:focus-visible, input:focus-visible{
 .product_price {
   color: var(--renk-yazi) !important;
 }
+/* ---------- 8. DUYURULAR SAYFASI ---------- */
+/* Sabit header (fixed) altindan baslamasi icin ust ic bosluk */
+.duyurular {padding-top: 150px !important;padding-bottom: 60px;}
+
+@media (max-width: 991px) {.duyurular {padding-top: 110px !important;}}
+
+.duyurular .row > [class*="col-"]{ margin-bottom: 30px;}   /* kartlar arasi bosluk */
+.duyuru_kart{
+  display: flex; flex-direction: column; width: 100%; height: 100%;
+  padding: 0; margin: 0 ; text-align: left; cursor: pointer;
+  background: #FFFFFF; border: 1px solid var(--renk-acik); border-radius: 12px; overflow: hidden;
+  font-family: var(--font-metin); color: var(--renk-yazi);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.duyuru_kart:hover{ transform: translateY(-6px); box-shadow: 0 12px 28px rgba(59,39,39,.15); }
+.duyuru_resim{ display: block; aspect-ratio: 16 / 10; overflow: hidden; background: var(--renk-acik); }
+.duyuru_resim img{ width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+.duyuru_kart:hover .duyuru_resim img{ transform: scale(1.06); }
+.duyuru_icerik{ display: flex; flex-direction: column; flex: 1; padding: 18px 20px 20px; }
+.duyuru_tarih{ font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--renk-ana-koyu); }
+.duyuru_baslik{ font-family: var(--font-baslik); font-size: 20px; line-height: 1.35; margin: 6px 0 12px; color: var(--renk-yazi); flex: 1; }
+.duyuru_detay{ font-size: 13px; font-weight: 600; color: var(--renk-ana-koyu); }
+
+/* modal */
+.modal-content{ background: var(--renk-zemin); border: 0; border-radius: 14px; overflow: hidden; }
+.modal-title{ font-family: var(--font-baslik); font-size: 24px; color: var(--renk-yazi); }
+.duyuru_modal_resim{ width: 100%; max-height: 300px; object-fit: cover; border-radius: 10px; margin-bottom: 18px; }
+.duyuru_ek{
+  display: inline-block; margin: 0 8px 8px 0; padding: 8px 16px; border-radius: 999px;
+  background: var(--renk-acik); color: var(--renk-yazi); font-size: 13px;
+}
+.duyuru_ek::before{ content: "\f0c6"; font-family: FontAwesome; margin-right: 8px; }
+.duyuru_ek:hover{ background: var(--renk-ana-koyu); color: #FFFFFF; }
+.button_kapat{
+  padding: 10px 26px; border: 0; border-radius: 3px; cursor: pointer;
+  background: var(--renk-ana-koyu); color: #FFFFFF; font-size: 12px; letter-spacing: .1em; text-transform: uppercase;
+}
