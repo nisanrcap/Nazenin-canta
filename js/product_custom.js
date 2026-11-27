@@ -116,7 +116,7 @@ $(document).ready(function()
 
 	/* 
 
-	4. Init Image
+4. Init Image
 
 	*/
 
@@ -130,12 +130,19 @@ $(document).ready(function()
 			var image = $(this);
 			image.on('click', function()
 			{
-				var imagePath = new String(image.data('image'));
-				selected.attr('src', imagePath);
+				var largePath = selected.attr('src');
+				var thumbPath = image.attr('data-image');
+
+				// Büyük resmi güncelle
+				selected.attr('src', thumbPath);
+
+				// Küçük resmi (hem arka planını hem data-image değerini) güncelle
+				image.attr('data-image', largePath);
+				image.css('background-image', 'url(' + largePath + ')');
 			});
 		});
 	}
-
+	
 	/* 
 
 	5. Init Quantity

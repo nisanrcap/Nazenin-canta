@@ -267,3 +267,19 @@ a:focus-visible, button:focus-visible, input:focus-visible{
 .urun_kart_ad{ display: block; margin-top: 4px; font-family: var(--font-baslik); font-size: 22px; line-height: 1.3; }
 .urun_kart_yildiz{ display: block; margin-top: 8px; }
 .urun_kart_fiyat{ display: block; margin-top: 10px; font-size: 18px; font-weight: 600; color: var(--renk-ana-koyu); }
+
+.product_features h3,
+.product_features .product_features_title{
+  font-size: 22px;
+  margin: 28px 0 12px;
+}
+.product_features ul{
+  list-style: disc;
+  padding-left: 20px;
+}
+.product_features li{
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+.review_content{ padding-left: 0; }
+.review_name{ font-weight: 600; color: var(--renk-yazi); }
