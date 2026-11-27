@@ -283,3 +283,24 @@ a:focus-visible, button:focus-visible, input:focus-visible{
 }
 .review_content{ padding-left: 0; }
 .review_name{ font-weight: 600; color: var(--renk-yazi); }
+
+/* ---------- 11. HAKKIMIZDA ve MISYON-VIZYON ---------- */
+.icerik_bolum{ padding: 150px 0 70px; background: transparent; }
+.icerik_bolum_koyu{ background: var(--renk-acik); }
+.icerik_ust{ font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--renk-ana); margin-bottom: 10px; }
+.icerik_baslik{ font-family: var(--font-baslik); font-size: 34px; line-height: 1.25; color: var(--renk-yazi); margin-bottom: 20px; }
+.icerik_bolum p{ line-height: 1.8; color: var(--renk-yazi-soluk); margin-bottom: 14px; }
+.icerik_resim img{ width: 100%; border-radius: 12px; display: block; }
+.icerik_rakam{ font-family: var(--font-baslik); font-size: 48px; color: var(--renk-ana-koyu); line-height: 1.1; }
+.icerik_rakam_aciklama{ font-size: 14px; letter-spacing: .08em; text-transform: uppercase; color: var(--renk-yazi); margin-top: 6px; }
+.icerik_bolum .row > [class*="col-"]{ margin-bottom: 24px; }
+.icerik_kart, .icerik_deger{ height: 100%; background: #FFFFFF; border: 1px solid var(--renk-acik); border-radius: 12px; padding: 28px; }
+.icerik_kart h3, .icerik_deger h3{ font-family: var(--font-baslik); font-size: 22px; color: var(--renk-ana-koyu); margin-bottom: 10px; }
+.icerik_kart p, .icerik_deger p{ margin-bottom: 0; }
+.icerik_kart_buyuk{ padding: 36px; }
+.icerik_kart_buyuk .icerik_baslik{ font-size: 28px; }
+@media (max-width: 767px){
+  .icerik_bolum{ padding: 120px 0 50px; }
+  .icerik_baslik{ font-size: 28px; }
+  .icerik_rakam{ font-size: 38px; }
+}
