@@ -235,7 +235,8 @@ a:focus-visible, button:focus-visible, input:focus-visible{
   padding: 10px 26px; border: 0; border-radius: 3px; cursor: pointer;
   background: var(--renk-ana-koyu); color: #FFFFFF; font-size: 12px; letter-spacing: .1em; text-transform: uppercase;
 }
-/* ---------- 9. ANA SAYFA: "Daha fazla duyuru" karti ---------- */
+/* ---------- 10. ÜRÜNLER SAYFASI: ürün kartları ---------- */
+.urunler_liste .section_title_container {margin-top: 50px;margin-bottom: 40px;}
 .duyuru_daha_fazla{
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   height: 100%; min-height: 220px; text-align: center; gap: 10px;
@@ -246,3 +247,23 @@ a:focus-visible, button:focus-visible, input:focus-visible{
 .duyuru_daha_fazla:hover{ background: var(--renk-ana-koyu); border-color: var(--renk-ana-koyu); color: #FFFFFF; }
 .duyuru_daha_ok{ font-size: 30px; line-height: 1; transition: transform .25s ease; }
 .duyuru_daha_fazla:hover .duyuru_daha_ok{ transform: translateX(6px); }
+/* ---------- 10. ÜRÜNLER SAYFASI: ürün kartları ---------- */
+.urunler_liste{ padding: 80px 0 100px; background: transparent; }
+.urunler_liste .row > [class*="col-"]{ margin-bottom: 30px; }
+.urunler_liste .section_title_container{ margin-bottom: 40px; }
+
+.urun_kart{
+  display: flex; flex-direction: column; height: 100%;
+  background: #FFFFFF; border: 1px solid var(--renk-acik); border-radius: 12px;
+  overflow: hidden; color: var(--renk-yazi);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.urun_kart:hover{ transform: translateY(-6px); box-shadow: 0 12px 28px rgba(122,85,85,.18); color: var(--renk-yazi); }
+.urun_kart_resim{ display: block; aspect-ratio: 4 / 5; overflow: hidden; background: var(--renk-acik); }
+.urun_kart_resim img{ width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+.urun_kart:hover .urun_kart_resim img{ transform: scale(1.05); }
+.urun_kart_icerik{ display: block; padding: 18px 20px 22px; }
+.urun_kart_tur{ display: block; font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--renk-ana); }
+.urun_kart_ad{ display: block; margin-top: 4px; font-family: var(--font-baslik); font-size: 22px; line-height: 1.3; }
+.urun_kart_yildiz{ display: block; margin-top: 8px; }
+.urun_kart_fiyat{ display: block; margin-top: 10px; font-size: 18px; font-weight: 600; color: var(--renk-ana-koyu); }
