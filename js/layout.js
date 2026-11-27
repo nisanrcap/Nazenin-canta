@@ -67,10 +67,10 @@
 				<li class="menu_mm"><a href="index.html">Ana Sayfa</a></li>
 				<li class="menu_mm"><a href="urunler.html">Ürünlerimiz</a>
 					<ul class="menu_mm">
-						<li class="menu_mm"><a href="urun_omuz.html">Aylin Omuz Çantası</a></li>
-						<li class="menu_mm"><a href="urun_el.html">Mira El Çantası</a></li>
-						<li class="menu_mm"><a href="urun_sirt.html">Deniz Sırt Çantası</a></li>
-						<li class="menu_mm"><a href="urun_cuzdan.html">Ceren Cüzdan</a></li>
+						<li class="menu_mm"><a href="urun_omuz.html">Omuz Çantası</a></li>
+						<li class="menu_mm"><a href="urun_el.html">El Çantası</a></li>
+						<li class="menu_mm"><a href="urun_sirt.html">Sırt Çantası</a></li>
+						<li class="menu_mm"><a href="urun_cuzdan.html">Cüzdan</a></li>
 					</ul>
 				</li>
 				<li class="menu_mm"><a href="duyurular.html">Duyurular</a></li>
