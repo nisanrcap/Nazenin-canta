@@ -49,6 +49,7 @@
       '</nav>' +
       '<div class="bottom">' +
         '<a class="btn ghost sm" href="../index.html" style="color:#e8dacb;border-color:#e8dacb;margin-bottom:8px;display:flex;justify-content:center">Siteyi gör</a>' +
+        '<button type="button" class="btn sm" id="btnCikis" style="width:100%;justify-content:center">Çıkış yap</button>' +
       '</div>';
     document.getElementById('btnCikis').addEventListener('click', function () {
       try { sessionStorage.removeItem(OTURUM); } catch (e) {}
